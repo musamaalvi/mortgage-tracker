@@ -1,0 +1,13 @@
+.env
+postgres-data/
+
+# Backend
+backend/target/
+*.iml
+.idea/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+.DS_Store

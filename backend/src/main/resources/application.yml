@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: mortgage-tracker
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/mortgage_tracker}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  error:
+    include-message: always
+  servlet:
+    session:
+      timeout: 7d
+      cookie:
+        http-only: true
+        # SameSite=Strict keeps the session cookie off cross-site requests, which is
+        # what protects this cookie-authenticated API from CSRF (CSRF tokens are disabled).
+        same-site: strict
+
+app:
+  username: ${APP_USERNAME}
+  password: ${APP_PASSWORD}
