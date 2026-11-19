@@ -13,24 +13,25 @@ cp .env.example .env     # then set the passwords
 docker compose up -d --build
 ```
 
-Open http://localhost:3000 and sign in with `APP_USERNAME` / `APP_PASSWORD` from `.env`.
+Open http://localhost:7340 and sign in with `APP_USERNAME` / `APP_PASSWORD` from `.env`.
 
 | `.env` key | Purpose |
 |---|---|
 | `POSTGRES_DB`, `POSTGRES_USER`, `POSTGRES_PASSWORD` | Database credentials |
-| `POSTGRES_PORT` | Host port for a DB client (127.0.0.1 only, default 5433) |
 | `APP_USERNAME`, `APP_PASSWORD` | App login |
-| `APP_PORT`, `BACKEND_PORT` | Host ports for the UI (3000) and API (8080) |
 
 Changing `APP_*` needs `docker compose up -d backend` to take effect. Changing the `POSTGRES_*` credentials after the first start does nothing, because Postgres keeps the credentials it was created with in `./postgres-data`.
+
+Ports: UI `7340`, API `7341` (both set in `docker-compose.yml`). Postgres isn't published; use
+`docker compose exec db psql -U <POSTGRES_USER> <POSTGRES_DB>` to query it.
 
 To wipe all data: `docker compose down && rm -rf postgres-data`.
 
 ## Develop
 
 ```bash
-docker compose up -d db backend      # API on :8080
-cd frontend && npm install && npm run dev   # UI on :5173, proxies /api to :8080
+docker compose up -d db backend      # API on :7341
+cd frontend && npm install && npm run dev   # UI on :7342, proxies /api to :7341
 ```
 
 Backend tests (no local JDK needed):
