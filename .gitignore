@@ -11,3 +11,13 @@ frontend/node_modules/
 frontend/dist/
 
 .DS_Store
+
+# Personal teaching workspace (/teach)
+backend/lessons/
+backend/reference/
+backend/assets/
+backend/learning-records/
+backend/MISSION.md
+backend/RESOURCES.md
+backend/NOTES.md
+backend/GLOSSARY.md
