@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface InterestRateRepository extends JpaRepository<InterestRate, Long> {
+interface InterestRateRepository extends JpaRepository<InterestRate, Long> {
 
     List<InterestRate> findByMortgageOrderByEffectiveFromAscIdAsc(Mortgage mortgage);
 

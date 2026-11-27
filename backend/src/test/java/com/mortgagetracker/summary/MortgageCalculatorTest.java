@@ -1,11 +1,10 @@
-package com.mortgagetracker;
+package com.mortgagetracker.summary;
 
 import com.mortgagetracker.entry.Entry;
 import com.mortgagetracker.entry.EntryType;
 import com.mortgagetracker.mortgage.InterestRate;
 import com.mortgagetracker.mortgage.Mortgage;
 import com.mortgagetracker.mortgage.RepaymentType;
-import com.mortgagetracker.summary.MortgageCalculator;
 import com.mortgagetracker.summary.SummaryDtos.Summary;
 import org.junit.jupiter.api.Test;
 
