@@ -16,7 +16,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /** Pure calculations over a mortgage, its rate history and its entries. Interest is monthly (annual rate / 12). */
-public class MortgageCalculator {
+class MortgageCalculator {
 
     private static final MathContext MC = MathContext.DECIMAL64;
     private static final BigDecimal HUNDRED = BigDecimal.valueOf(100);

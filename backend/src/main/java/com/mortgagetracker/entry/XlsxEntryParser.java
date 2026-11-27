@@ -19,7 +19,7 @@ import java.util.List;
  * A = date (Excel date or dd/mm/yyyy text), B = total payment, C = rent, D = equity.
  * Parsing stops at the first row where A–D are all empty.
  */
-public class XlsxEntryParser {
+class XlsxEntryParser {
 
     public record ParsedRow(int row, LocalDate date, BigDecimal total, BigDecimal rent, BigDecimal equity) {}
 

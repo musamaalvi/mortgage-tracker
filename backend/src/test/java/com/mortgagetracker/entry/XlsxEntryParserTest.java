@@ -1,6 +1,5 @@
-package com.mortgagetracker;
+package com.mortgagetracker.entry;
 
-import com.mortgagetracker.entry.XlsxEntryParser;
 import com.mortgagetracker.entry.XlsxEntryParser.ParseResult;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
